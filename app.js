@@ -36,7 +36,7 @@ inputForm.addEventListener("submit",(e)=>{
     if(testLeap(yyyy)){
         outputDiv.innerHTML="You are leap year born "+yyyy+" was indeed a leap year"
     }else{
-        outputDiv.innerHTML="You are not leap year born. "+yyyy+" was not a leap year. Nearest leap year was "+found[0]+"."
+        outputDiv.innerHTML="You are not leap year born. "+yyyy+" was not a leap year. Nearest leap year was "+found[0]+" and you missed it by "+found[1]+" years."
     }
    
 
