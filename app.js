@@ -3,18 +3,26 @@ var checkBtn = document.querySelector("#check-btn");
 var outputDiv = document.querySelector("#output");
 var inputForm = document.forms[0];
 
-function testPrime(n){
-    if(n==1){
-        return false;
-    }else if(n==2){
+function testLeap(n){
+    if((n%4==0) && (n%100!=0) || (n%400==0)){
         return true;
     }else{
-        for(var i =2; i<n;i++){
-            if(n%i==0){
-                return false;
-            }
+        return false;
+    }
+}
+
+function nextLeapYr(year){
+    yyNo1 = Number(year);
+    yyNo2 = Number(year);
+    for(var i=1;i>0;i++){
+        yyNo1 = yyNo1+1;
+        if(testLeap(yyNo1)){
+            return([yyNo1,i])
+        } 
+        yyNo2=yyNo2-1;
+        if(testLeap(yyNo2)){
+            return([yyNo2,i])
         }
-        return true;
     }
 }
 
@@ -22,19 +30,14 @@ inputForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     var bDateArr = bDate.value.split("-");
     var yyyy = bDateArr[0];
-    var mm = bDateArr[1];
-    var dd = bDateArr[2];
+    var found = nextLeapYr(yyyy);
+    console.log(found[0],found[1]);
     outputDiv.style.display="block"
-
-    if(testPrime(dd+mm)){
-        outputDiv.innerHTML="Your birthdate " +dd+"/"+mm+"/"+yyyy+" in the formate dd/mm i.e., "+dd+mm+" is prime number." 
-    }else if(testPrime(mm+dd)){
-        outputDiv.innerHTML="Your birthdate " +dd+"/"+mm+"/"+yyyy+" in the formate mm/dd i.e., "+mm+dd+" is prime number."
-    }else if(testPrime(yyyy)){
-        outputDiv.innerHTML="Your birthyear "+yyyy+" is prime number."
+    if(testLeap(yyyy)){
+        outputDiv.innerHTML="You are leap year born "+yyyy+" was indeed a leap year"
     }else{
-        outputDiv.innerHTML="Your birthdate is not prime number in any of the fromate."
+        outputDiv.innerHTML="You are not leap year born. "+yyyy+" was not a leap year. Nearest leap year was "+found[0]+"."
     }
-    console.log(dd+mm,mm+dd,yyyy); 
+   
 
 })
