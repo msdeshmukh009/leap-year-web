@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+:root{
+    --primary-color:#28FFBF;
+    
+}
+body{
+    margin: 0;
+    font-family: 'Dosis', sans-serif;
+}
+main{
+    text-align: center;   
+}
+header{
+    background-color: var(--primary-color);
+    padding: 1rem;
+}
+
+section{
+    width: 80%;
+    margin: auto;
+}
+.instruction-div{
+    width: 80%;
+    margin: auto;
+    line-height: 1.5;
+}
+#date-input{
+    display: block;
+    margin: 2rem auto 1rem;
+    padding: 0.5rem;
+    border: solid var(--primary-color) 1px ;
+    border-radius: 0.5rem;
+}
+#check-btn{
+    background-color:white;
+    border: solid 1px var(--primary-color) ;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.outputBox{
+    width: 60%;
+    margin:1rem auto 1rem;
+}
+#output{
+    display: none;
+    border: solid 1px var(--primary-color);
+    width: 100%;
+    margin:1rem auto 1rem;
+}
+/* footer */
+.footer {
+    
+    padding: 3rem 1rem;
+    background-color: var(--primary-color);
+    border-top-right-radius: 1rem;
+    color: var(--yellow);
+    text-align: center;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+    
+}
+
+.footer-heading {
+    font-weight: bold;
+    font-size: large;
+}
+.footer ul {
+    padding-inline-start: 0px;
+}
+.footer-link {
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    margin:0.5rem 1rem ;
+}
+/* lists */
+.list-non-bullet {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.list-item-inline {
+    display: inline;
+    margin: 0rem 0.5rem;
+}
+hr{
+    border: black dotted 6px;
+    width: 4rem;
+    margin:1rem auto;
+    border-bottom:none ;
+}
